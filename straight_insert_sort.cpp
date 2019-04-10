@@ -1,8 +1,8 @@
-# include <iostream>
+# include "iostream"
 
 using namespace std;
 
-// 使用冒泡算法排序
+// 使用直接插入算法排序
 
 int main(){
     int input_data[20];
@@ -35,30 +35,24 @@ int main(){
         cout << endl;
     }
     
-
     // 算法部分
-    int flag = -1;
-   
-   for(int j = 20 - 1; j > 0; j--)
+    int flag;
+   for(int i = 1; i < 20; i++)
    {
-        for(int i = 0; i < j; i++)
-        {
-           
-               
-            if (input_data[i] > input_data[i + 1]) {
-                /* code */
-                flag = input_data[i];
-                input_data[i] = input_data[i+1];
-                input_data[i+1] = flag;
-            }
-        }
+       flag = input_data[i];
 
-        if(flag == -1){
-                cout << "the list is sorted!" << endl;
-                return 0;
-            }
+       int j = i - 1;
+
+       while (flag < input_data[j] && j > -1) {
+           /* code */
+           input_data[j + 1] = input_data[j];
+           j--;
+       }
+
+       input_data[j + 1] = flag;
+
    }
-    
+   
 
     // 输出部分
     {
