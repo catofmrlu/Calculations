@@ -69,5 +69,9 @@ int main(){
             cout << "the value of " << i << ": "<< input_data[i] << endl;
         }
     }
+
+    int s;
+    cout << "input anyway numbers continue" << endl;
+    cin >> s;
     return 0;
 }
