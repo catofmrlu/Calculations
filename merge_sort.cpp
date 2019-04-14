@@ -2,7 +2,7 @@
 
 using namespace std;
 
-// 使用直接插入算法排序
+// 使用shell排序算法排序
 
 int main(){
     int input_data[20];
@@ -36,40 +36,47 @@ int main(){
     }
     
     // 算法部分
-    int flag;
-   for(int i = 1; i < 20; i++)
-   {
-       flag = input_data[i];
+    void merge(int a[], int b[], int low, int m, int high)
+    {
+        int i = low, j = m + 1, k =low;
 
-       int low = 0, high = i - 1;
-
-       while (low <= high) {
-           
-           int mid = (low + high) / 2;
-
-           if (flag > input_data[mid])
-               low = mid + 1;
-           else
-               high  = mid - 1;
-       }
-           
-        for (int j = i - 1; j >= low; j--)  /* 注：此处以及下面的low也可用high + 1代替 */
+        while (i < = m && j < high)
         {
-            input_data[j + 1] = input_data[j]; 
+            if (a[i] <= a[j])
+            {   
+                b[k++] = a[i++];
+
+            }
+            else
+            {
+                b[k++] = a[j++];
+            }
+            
         }
 
-        input_data[low] = flag;
-   }
+        while (i <= m)
+        {
+            /* code */
+            b[k++] = a[i++];
+        }
+
+        while (j <= high)
+        {
+            /* code */
+            b[k++] = a[j++];
+        }
+    }
 
 
     // 输出部分
     {
         cout << "sort completed!" << endl;
-
-        cout << "sort result:";
+        cout << "sorted result:";
 
         for(int i = 0; i < 20; i++)
+        {
             cout << input_data[i] << ",";
+        }
     }
 
     return 0;
