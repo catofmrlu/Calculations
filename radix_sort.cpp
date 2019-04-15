@@ -57,10 +57,11 @@ int main(){
         value_max /= 10;
     }
 
+    cout << "最大位是：" << d << endl;
+
     int k, j, count[10], temp[20], radix = 1;
     for (int i = 0; i < d; i++)
     {
-        /* code */
         for ( i = 0; i < 10; i++)
             count[i] = 0;
         for ( i = 0; i < 20; i++)
