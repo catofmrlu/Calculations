@@ -7,16 +7,15 @@ using namespace std;
 // 本算法还没有完全完成！！
 
 int main(){
-    int input_data[20];
-
-    // 输入部分
-    {
-        int input_data[20] = 
+    int input_data[20] = 
         {32, 2, 43, 0, 43, 
         11, 48, 983, 56, 43, 
         11, 0, 87, 66, 42, 
         31, 22, 20, 98, 35};
 
+    // 输入部分
+    {
+        
         // for(int i = 0; i < 20; i++)
         // {
         //     /* code */

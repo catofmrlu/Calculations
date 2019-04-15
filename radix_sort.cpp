@@ -8,7 +8,12 @@ using namespace std;
 
 int main(){
 
-    int input_data[20];
+    
+    int input_data[20] = 
+    {32, 2, 43, 0, 43, 
+    11, 48, 983, 56, 43, 
+    11, 0, 87, 66, 42, 
+    31, 22, 20, 98, 35};
 
     // 输入部分
     {
@@ -29,11 +34,6 @@ int main(){
         //     }
         // }
 
-        int input_data[20] = 
-        {32, 2, 43, 0, 43, 
-        11, 48, 983, 56, 43, 
-        11, 0, 87, 66, 42, 
-        31, 22, 20, 98, 35};
         
         cout << endl << "input complete!" << endl;
         cout << "input result:";
@@ -46,9 +46,13 @@ int main(){
     
     // 算法部分
     int value_max = input_data[0];
-    for (int i = 1; i < 20; i++)
-        if (input_data[i] > value_max)
+    for (int i = 1; i < 20; i++){
+        if (input_data[i] > value_max){
             value_max = input_data[i];
+            cout << "value of max:" << value_max << endl;
+        }
+    }
+    cout << "value_max:" << value_max << endl;
 
     int d = 0;
     while (value_max > 0)
@@ -57,7 +61,7 @@ int main(){
         value_max /= 10;
     }
 
-    cout << "最大位是：" << d << endl;
+    cout << "the max is:" << d << endl;
 
     int k, j, count[10], temp[20], radix = 1;
     for (int i = 0; i < d; i++)
@@ -75,7 +79,7 @@ int main(){
         for (j = 19; j >= 0; j--)
         {
             /* code */
-            k = (input_data[j] / radix) % d;
+            k = (input_data[j] / radix) % 10;
             temp[count[k] - 1] = input_data[j];
             count[k]--;
         }

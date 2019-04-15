@@ -61,7 +61,11 @@ void mergeSort(int a[], int p, int q){
 
 int main(){
 
-    int input_data[20];
+    int input_data[20] = 
+        {32, 2, 43, 0, 43, 
+        11, 48, 983, 56, 43, 
+        11, 0, 87, 66, 42, 
+        31, 22, 20, 98, 35};
 
     // 输入部分
     {
@@ -82,12 +86,6 @@ int main(){
         //     }
         // }
 
-        int input_data[20] = 
-        {32, 2, 43, 0, 43, 
-        11, 48, 983, 56, 43, 
-        11, 0, 87, 66, 42, 
-        31, 22, 20, 98, 35};
-        
         cout << endl << "input complete!" << endl;
         cout << "input result:";
 
