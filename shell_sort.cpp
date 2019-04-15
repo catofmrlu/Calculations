@@ -4,27 +4,35 @@ using namespace std;
 
 // 使用shell排序算法排序
 
+// 本算法还没有完全完成！！
+
 int main(){
     int input_data[20];
 
     // 输入部分
     {
-        for(int i = 0; i < 20; i++)
-        {
-            /* code */
-            try
-            {
-                cout << "please input the value of  " << i << endl;
-                cin >> input_data[i];
-                /* code */
-            }
-            catch(const std::exception& e)
-            {
-                std::cerr << e.what() << '\n';
-            }catch(io_errc e){
-                cout << e;
-            }
-        }
+        int input_data[20] = 
+        {32, 2, 43, 0, 43, 
+        11, 48, 983, 56, 43, 
+        11, 0, 87, 66, 42, 
+        31, 22, 20, 98, 35};
+
+        // for(int i = 0; i < 20; i++)
+        // {
+        //     /* code */
+        //     try
+        //     {
+        //         cout << "please input the value of  " << i << endl;
+        //         cin >> input_data[i];
+        //         /* code */
+        //     }
+        //     catch(const std::exception& e)
+        //     {
+        //         std::cerr << e.what() << '\n';
+        //     }catch(io_errc e){
+        //         cout << e;
+        //     }
+        // }
         
         cout << endl << "input complete!" << endl;
         cout << "input result:";

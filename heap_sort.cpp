@@ -4,6 +4,8 @@ using namespace std;
 
 // 使用shell排序算法排序
 
+// 本算法还没有完全解决
+
 int main(){
     int input_data[20] = 
     {32, 2, 43, 0, 43, 
