@@ -68,15 +68,16 @@ int main(){
         for (int i = 0; i < 20; i++)
         {
             k = input_data[i] / radix % 10;
-            count[k]++; /*计数器*/
+            count[k]++; /* 计数器 */
         }
 
         for (j = 1; j < 10; j++)
-            count[j] = count[j - 1] + count[j];
+            count[j] = count[j - 1] + count[j]; /* 计算count[j]及之前的所有的总值 */
         for (j = 19; j >= 0; j--)
         {
             k = (input_data[j] / radix) % 10;
-            temp[count[k] - 1] = input_data[j];
+            /* 由前面计算的总值从后面依次输入对应位置 */
+            temp[count[k] - 1] = input_data[j]; 
             count[k]--;
         }
 
