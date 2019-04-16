@@ -4,8 +4,6 @@ using namespace std;
 
 // 使用基数排序算法排序
 
-// 该算法尚未完成！！
-
 int main(){
 
     
@@ -49,7 +47,6 @@ int main(){
     for (int i = 1; i < 20; i++){
         if (input_data[i] > value_max){
             value_max = input_data[i];
-            cout << "value of max:" << value_max << endl;
         }
     }
     cout << "value_max:" << value_max << endl;
@@ -66,31 +63,27 @@ int main(){
     int k, j, count[10], temp[20], radix = 1;
     for (int i = 0; i < d; i++)
     {
-        for ( i = 0; i < 10; i++)
+        for ( int i = 0; i < 10; i++)
             count[i] = 0;
-        for ( i = 0; i < 20; i++)
+        for (int i = 0; i < 20; i++)
         {
             k = input_data[i] / radix % 10;
             count[k]++; /*计数器*/
         }
 
-        for ( j = 1; j < 10; j++)
+        for (j = 1; j < 10; j++)
             count[j] = count[j - 1] + count[j];
         for (j = 19; j >= 0; j--)
         {
-            /* code */
             k = (input_data[j] / radix) % 10;
             temp[count[k] - 1] = input_data[j];
             count[k]--;
         }
 
-        cout << "into last for" << endl;
-
-        for (j = 0; i < 20; j++)
+        for (j = 0; j < 20; j++)
             input_data[j] = temp[j];
 
         radix *= 10;
-        
     }
     
     
@@ -103,6 +96,7 @@ int main(){
         {
             cout << input_data[i] << ",";
         }
+
     }
 
     return 0;
