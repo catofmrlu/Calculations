@@ -4,20 +4,16 @@ using namespace std;
 
 // 使用shell排序算法排序
 
-// 本算法还没有解决！！
-
 void merge(int a[], int low, int m, int high)
 {
         int i = low, j = m + 1, k =0;
         int temp[high - low + 1];
-        cout << "high - low + 1:" << high - low + 1 << endl;
 
-        while (i <= m && j < high)
+        while (i <= m && j <= high)
         {
             if (a[i] <= a[j])
             {   
                 temp[k++] = a[i++];
-
             }
             else
             {
@@ -43,8 +39,6 @@ void merge(int a[], int low, int m, int high)
         {
             a[i] = temp[k++];
         }
-
-        // delete temp;
 }
 
 void mergeSort(int a[], int p, int q){
@@ -54,7 +48,6 @@ void mergeSort(int a[], int p, int q){
         mergeSort(a, p, r);
         mergeSort(a, r + 1, q);
         merge(a, p, r, q);
-        cout << "-----r:" << r << endl;
     }
 }
 
@@ -96,12 +89,9 @@ int main(){
     }
     
     // 算法部分
-    try
-    {
+    try{
         mergeSort(input_data, 0, 19);
-    }
-    catch(const std::exception& e)
-    {
+    }catch(const std::exception& e){
         std::cerr << e.what() << '\n';
         cout << "出现异常！";
     }
