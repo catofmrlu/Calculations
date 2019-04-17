@@ -4,7 +4,6 @@ using namespace std;
 
 // 使用简单选择算法排序
 
-
 // 算法实现部分
 void quickSort(int a[], int left, int right){
     int i = left, j = right, temp;

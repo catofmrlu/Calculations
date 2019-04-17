@@ -4,8 +4,6 @@ using namespace std;
 
 // 使用shell排序算法排序
 
-// 本算法还没有完全解决
-
 int main(){
     int input_data[20] = 
     {32, 2, 43, 0, 43, 
@@ -46,31 +44,36 @@ int main(){
 
     try
     {
-        for (int j = 20; j > 1; j--)
+        // 限定比较范围
+        for (int j = 19; j > 0; j--)
         {
             cout << "the value of j:" << j << endl;
 
             int temp;
-
-            for (int i = j / 2 - 1; i >= 0; i--)
+            // 遍历父节点
+            for (int i = j / 2; i >= 0; i--)
             {
-                if (input_data[i] > input_data[2 * i - 1] && (2 * i - 1) < j)
+                //保证子节点不越界
+                if (2 * (i + 1) <= j)
                 {
-                    cout << "2 * i - 1 :" << 2 * i - 1<<endl;
-                    temp = input_data[i];
-                    input_data[i] = input_data[2 * i - 1];
-                    input_data[2 * i - 1] = temp;
+                    // 比较父节点与左孩子节点的大小
+                    if (input_data[i] < input_data[2 * i + 1])
+                    {
+                        temp = input_data[i];
+                        input_data[i] = input_data[2 * i + 1];
+                        input_data[2 * i + 1] = temp;
+                    }
+                    // 比较父节点与右孩子节点的大小
+                    if (input_data[i] < input_data[2 * (i + 1)]) 
+                    {
+                        temp = input_data[i];
+                        input_data[i] = input_data[2 * (i + 1)];
+                        input_data[2 * (i + 1)] = temp;
+                    }
                 }
-                if (input_data[i] > input_data[2 * i] && 2 * i < j) 
-                {
-                    cout << "2 * i :" << 2 * i <<endl;
-
-                    temp = input_data[i];
-                    input_data[i] = input_data[2 * i];
-                    input_data[2 * i] = temp;
-                }
+                
             }
-
+            //  把大根交换到最后一个位置
             temp = input_data[0];
             input_data[0] = input_data[j];
             input_data[j] = temp;        
@@ -78,8 +81,8 @@ int main(){
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
         cout << "appear some error!" << endl;
+        std::cerr << e.what() << '\n';
     }
 
     // 输出部分
