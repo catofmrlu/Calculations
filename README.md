@@ -1,7 +1,6 @@
 # Calculations
 
 **备注：**  
-
 ![](https://img.shields.io/badge/语言-C++-brightgreen.svg)
 ![](https://img.shields.io/badge/环境-gcc-red.svg)
 
