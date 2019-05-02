@@ -1,10 +1,8 @@
 # Calculations
 
 **备注：**
-> 语言：c++  
-环境：gcc
-
-
+![](https://img.shields.io/badge/语言-C++-brightgreen.svg)
+![](https://img.shields.io/badge/环境-gcc-red.svg)
 ---
 **算法目录：**
 - 简单选择排序
