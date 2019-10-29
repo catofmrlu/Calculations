@@ -58,7 +58,6 @@ int main(){
                 return 0;
             }
    }
-    
 
     // 输出部分
     {
@@ -69,6 +68,5 @@ int main(){
             cout << "the value of " << i << ": "<< input_data[i] << endl;
         }
     }
-
     return 0;
 }
